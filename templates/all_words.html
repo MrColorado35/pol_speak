@@ -4,7 +4,10 @@
 {% block content %} 
 
     <ul class="collapsible popout" data-collapsible="accordion">
-    {% for word in words %}
+    {% for word in words %} 
+    <div class="right margin-right no-bg tall">
+    <a class="waves-effect waves-light btn center top-one bg-blue">DELETE</a>
+    </div>
        <li>
       <div class="collapsible-header">{{ word.eng }}</div>
       <div class="collapsible-body"> {{ word.pol }} <br> <span>{{ word.read }}</span>

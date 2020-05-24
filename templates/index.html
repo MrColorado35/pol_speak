@@ -1,16 +1,20 @@
 <!-- The main page on which we start our journey as for now.
     Later on, before publishing the app to first users, I'm going to disable the "Admin" button,
     to avoid potential acts of vandalisms etc. -->
-    
+
 {% extends 'base.html' %}
 {% block content %}
 
-    <section class="center container">
+    <section class="center">
         <div class="row">
             <h2>Welcome to our page!</h2>
             <h3>Please choose who you are:</h3>
-            <a href="user.html" id="user" class="col-md-6 bg-drk padding-5 opacity"><h3>The Student</h3> I would like to learn some Polish <br></a>
-            <a href="admin.html" id="admin" class="col-md-6 bg-drk padding-5 "><h3>The Admin</h3> I speak Polish and want to help improving your database</a>
+            <div class="col s6 bg-drk opacity high">
+                <a href="user.html" id="user" class="bg-drk padding-5 opacity"><h3>The Student</h3> I would like to learn some Polish <br></a>
+            </div>
+            <div class="col s6 bg-drk">
+                <a href="admin.html" id="admin" class="bg-drk padding-5 "><h3>The Admin</h3> I speak Polish and want to help improving your database</a>
+            </div>
         </div>
     </section> 
 

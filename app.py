@@ -29,9 +29,20 @@ def admin():
     return render_template("admin.html")
     
 @app.route('/all_words.html')
-def all_words():
-    
+def all_words():    
     return render_template("all_words.html",     words=mongo.db.words.find())
+
+@app.route('/add_word.html')
+def add_word():
+    return render_template("add_word.html")
+
+@app.route('/edit_word.html')
+def edit_word():
+    return render_template("edit_word.html")
+
+@app.route('/delete_word.html')
+def delete_word():
+    return render_template("delete_word.html")
 
 
 if __name__ == '__main__':
