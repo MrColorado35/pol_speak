@@ -24,6 +24,7 @@ body {
 
 .bg-love {
     background-color: #561f37;
+    color: aliceblue;
 }
 
 .opacity {
@@ -58,7 +59,7 @@ body {
 
 a {
     text-decoration: none;
-    /* color: black; */
+    color: inherit;
 }
 
 
@@ -70,8 +71,12 @@ a {
     margin-top: 2px;
 }
 
-.margin-right{
+.margin-right {
     margin-right: 5%;
+}
+
+.justify {
+    text-align: justify;
 }
 
 /* .margin-sides {
@@ -92,4 +97,7 @@ a {
 footer {
     position: absolute;
     bottom: 0;
+    min-height: 120px;
+    width: 100%;
+
 }

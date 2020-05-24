@@ -44,6 +44,10 @@ def edit_word():
 def delete_word():
     return render_template("delete_word.html")
 
+@app.route('/contact.html')
+def contact():
+    return render_template("contact.html")
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
