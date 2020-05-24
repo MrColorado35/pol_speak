@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+    {% for word in words %}
+        {{ word.eng }}
+        {{ word.pl }}
+        {{ word.read }}
+        {{ word.cat_name }}
+        {{ word.explaination }}
+       
+
+    {% endfor %}
+{% endblock %}
