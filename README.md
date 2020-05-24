@@ -21,3 +21,5 @@ I identified a user as:
 
 While creating this app, I used some external sources:
 - coolors.co to choose the colors palette
+- materialize.com to use some CSS and JavaScript. Also it's worth to mention, that it was my first project with     something else than bootstrap. 
+- I was inspired by the Code Institute course materials, espacially the last mini-project with databases.
