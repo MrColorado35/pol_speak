@@ -6,13 +6,18 @@
     <ul class="collapsible popout" data-collapsible="accordion">
     {% for word in words %} 
     <div class="right margin-right no-bg tall">
-    <a class="waves-effect waves-light btn center top-one bg-blue">DELETE</a>
+    <a class="waves-effect waves-light btn center margin-top bg-blue">DELETE</a>
     </div>
        <li>
-      <div class="collapsible-header">{{ word.eng }}</div>
-      <div class="collapsible-body"> {{ word.pol }} <br> <span>{{ word.read }}</span>
-      <br>  {{ word.cat_name }} <br>
-        {{ word.explaination }}
+      <div class="collapsible-header">    
+             {{ word.eng }} 
+      <!-- <a class="right margin-right bg-blue tall waves-effect waves-light btn center top-one">DELETE</a>          -->
+      </div>
+      <div class="collapsible-body center"><div class="bg-love">
+        <p>Polish: &emsp; {{ word.pol }} </p>
+        <p>Pronounce: &emsp; {{ word.read }}</p></div>
+        <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p> 
+        <p>Category: &emsp;{{ word.cat_name }} </p>
       </div>
     </li>
      {% endfor %}

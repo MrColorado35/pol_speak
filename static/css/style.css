@@ -34,6 +34,11 @@ body {
 .no-bg {
     background-color: inherit;
 }
+
+/* .float-right {
+    float: right;
+    clear: both;
+} */
 /* --------------------------------------- General style */
 
 .block {
@@ -62,14 +67,20 @@ a {
     color: inherit;
 }
 
+.whole-page {
+    min-height: 600px;
+}
 
 .padding-5 {
     padding: 5%;
 }
-
-.top-one {
-    margin-top: 2px;
+.margin-top {
+    margin-top: 5%;
 }
+
+/* .top-one {
+    margin-top: 2px;
+} */
 
 .margin-right {
     margin-right: 5%;
@@ -92,12 +103,17 @@ a {
     object-position: right;
 }
 
+.no-bottom {
+    margin-bottom: 0;
+}
 /* ----------------------------------- Footer */
 
 footer {
-    position: absolute;
+    display: block;
+    position:relative;
     bottom: 0;
-    min-height: 120px;
+    /* margin-bottom: 0!important; */
+    min-height: 100px;
     width: 100%;
 
 }
