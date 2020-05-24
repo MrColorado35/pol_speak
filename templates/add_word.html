@@ -3,33 +3,38 @@
 
 <h2 class="center">Add a word:</h2>
  <div class="row">
-    <form class="col s12">
+    <form action="{{ url_for('insert_word') }}" method="POST" class="col s12">
       <div class="row">
         <div class="input-field col s12 m6">
-          <input id="english_word" type="text" class="validate">
+          <input id="english_word" name="eng" type="text" class="validate">
           <label for="english_word">English Word: </label>
         </div>
         <div class="input-field col s12 m6">
-          <input id="polish_word" type="text" class="validate">
+          <input id="polish_word" name="pol" type="text" class="validate">
           <label for="polish_word">Polish Word: </label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input id="pronunciation" type="text" class="validate">
+          <input id="pronunciation" name="read" type="text" class="validate">
           <label for="pronunciation">Pronunciation: </label>
         </div>
         <div class="input-field col s12 m6">
-          <input id="explaination" type="text" class="validate">
+          <input id="explaination" name="explaination" type="text" class="validate">
           <label for="explaination">Explaination: </label>
         </div>
       </div>
        <div class="row">
         <div class="input-field col s12">
-          <input id="category" type="text" class="validate">
+          <input id="category" name="cat_name" type="text" class="validate">
           <label for="category">Category name: </label>
         </div>
        </div>
+       <div class="row center">
+            <button class="btn waves-effect waves-light bg-blue" type="submit" >Submit
+            <i class="material-icons right">send</i>
+            </button>
+        </div>
     </form>
   </div>
 

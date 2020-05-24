@@ -30,11 +30,18 @@ def admin():
     
 @app.route('/all_words.html')
 def all_words():    
-    return render_template("all_words.html",     words=mongo.db.words.find())
+    return render_template("all_words.html", words=mongo.db.words.find())
 
 @app.route('/add_word.html')
 def add_word():
     return render_template("add_word.html")
+
+@app.route('/insert_word', methods=['POST'])
+def insert_word():
+    words = mongo.db.words
+    words.insert_one(request.form.to_dict())
+    return redirect(url_for('all_words'))
+
 
 @app.route('/edit_word.html')
 def edit_word():

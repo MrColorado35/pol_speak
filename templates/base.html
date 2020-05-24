@@ -12,15 +12,28 @@
   <!-- Import CSS from Bootstrap, Font-awesome and Materialize -->
 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
-<!--Import Google Icon Font-->
+
+<!--Import Google Fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Import embedded CSS -->
 <link rel="stylesheet" href="../static/css/style.css">
 <title>Pol_speak. Learn few useful Polish words</title>
 </head>
 <body>
+    <nav class="bg-drk">
+        <div class="nav-wrapper">
+        <a href="{{url_for('index')}}" class="brand-logo right">Pol_speak</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{{url_for('admin')}}">Admin</a></li>
+                <li><a href="{{url_for('user')}}">Student</a></li>
+                <li><a href="{{url_for('all_words')}}">All words</a></li>
+                <li><a href="{{url_for('add_word')}}">Add word</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container whole-page">
+
         {% block content %}
 
 
