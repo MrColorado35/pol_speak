@@ -1,9 +1,17 @@
+<!-- Users will only have an ability to read the records from our database, without a structure allowing users to add,  edit or delete them -->
+
 {% extends 'base.html' %}
 {% block content %} 
 
+    <ul class="collapsible popout" data-collapsible="accordion">
     {% for cat in categories %}
-        {{ cat.cat_name }}
-        {{ cat.cat_type }}
-
+    <li>
+      <div class="collapsible-header"><i class="material-icons">expand_more</i> {{ cat.cat_name }}</div>
+      <div class="collapsible-body"><span> {{ cat.cat_type }}</span></div>
+    </li>
     {% endfor %}
+  </ul>
+       
+
+   
 {% endblock %}

@@ -1,0 +1,20 @@
+<!-- List of all words for Admin to see -->
+
+{% extends 'base.html' %}
+{% block content %} 
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+    {% for word in words %}
+       <li>
+      <div class="collapsible-header">{{ word.eng }}</div>
+      <div class="collapsible-body"> {{ word.pol }} <br> <span>{{ word.read }}</span>
+      <br>  {{ word.cat_name }} <br>
+        {{ word.explaination }}
+      </div>
+    </li>
+     {% endfor %}
+  </ul>  
+        
+
+   
+{% endblock %}

@@ -1,13 +1,23 @@
+<!-- Admins will be allowed to perform all CRUD actions in our database -->
+
 {% extends 'base.html' %}
-{% block content %} 
+{% block content %}
+      <ul class="collapsible" data-collapsible="accordion">
+    <li>
+        <a href="{{url_for('all_words')}}"><div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>See all words</div>
+        </a>
+    </li>
+    <li>
+        <a href="add_word"><div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>Add new word</div>
+        </a>    </li>
+    <li>
+        <a href="edit_word"><div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>Edit word</div>
+        </a>
+    </li>
+  </ul>
+ 
 
-    {% for word in words %}
-        {{ word.eng }}
-        {{ word.pl }}
-        {{ word.read }}
-        {{ word.cat_name }}
-        {{ word.explaination }}
-       
-
-    {% endfor %}
 {% endblock %}

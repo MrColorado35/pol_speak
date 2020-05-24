@@ -26,7 +26,12 @@ def user():
 
 @app.route('/admin.html')
 def admin():
-    return render_template("admin.html", words=mongo.db.words.find())
+    return render_template("admin.html")
+    
+@app.route('/all_words.html')
+def all_words():
+    
+    return render_template("all_words.html",     words=mongo.db.words.find())
 
 
 if __name__ == '__main__':
