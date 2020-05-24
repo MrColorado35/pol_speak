@@ -1,4 +1,57 @@
 body {
+    background-color: #d7dedc;
+    color: #0b0b0b;
+}
+
+/* --------------------------------------Colors */
+
+.bg-blue {
+    background-color: #20a4f3;
+}
+
+.bg-red {
     background-color: #a30b37;
-    color: antiquewhite;
+}
+
+.bg-drk {
+    background-color: #2d3142;
+    color:  aliceblue;
+}
+
+.bg-light {
+    background-color: #d7dedc;
+}
+
+.bg-love {
+    background-color: #561f37;
+}
+
+/* --------------------------------------- General style */
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.center {
+    text-align: center;
+    object-position: center;
+}
+
+.wide {
+    width: 100%;
+}
+
+.heigh {
+    height: 100%;
+}
+
+/* ----------------------------------- Footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
 }
