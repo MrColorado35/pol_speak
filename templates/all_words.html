@@ -2,15 +2,19 @@
 
 {% extends 'base.html' %}
 {% block content %} 
-
-    <ul class="collapsible popout" data-collapsible="accordion">
+<div class="row">
+    <ul class="collapsible popout " data-collapsible="accordion">
     {% for word in words %} 
-    <div class="right margin-right no-bg tall">
-    <a class="waves-effect waves-light btn center margin-top bg-blue">DELETE</a>
-    </div>
-       <li>
-      <div class="collapsible-header">    
+    <!-- <div class="right margin-right no-bg tall">
+    </div> -->
+       <li>      
+      <div class="collapsible-header ">
+            <a class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
+            <p class=" center col s6">
              {{ word.eng }} 
+            </p>
+            <a class="waves-effect right col s3 margin-right waves-light btn bg-love">DELETE</a>
+
       <!-- <a class="right margin-right bg-blue tall waves-effect waves-light btn center top-one">DELETE</a>          -->
       </div>
       <div class="collapsible-body center"><div class="bg-love">
@@ -22,6 +26,7 @@
     </li>
      {% endfor %}
   </ul>  
+</div>
         
 
    

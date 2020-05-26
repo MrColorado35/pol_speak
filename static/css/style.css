@@ -74,8 +74,13 @@ a {
 .padding-5 {
     padding: 5%;
 }
+
+.padding-left {
+    padding-left: 20%;
+}
+
 .margin-top {
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 /* .top-one {
@@ -94,14 +99,14 @@ a {
     margin: 0 5%;
 } */
 
-.tall {
+/* .tall {
     height: 30px;
-}
+} */
 
-.right {
+/* .right {
     text-align: right;
     object-position: right;
-}
+} */
 
 .no-bottom {
     margin-bottom: 0;
