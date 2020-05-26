@@ -9,7 +9,7 @@
     </div> -->
        <li>      
       <div class="collapsible-header ">
-            <a class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
+            <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
             <p class=" center col s6">
              {{ word.eng }} 
             </p>

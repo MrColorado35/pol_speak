@@ -43,9 +43,11 @@ def insert_word():
     return redirect(url_for('all_words'))
 
 
-@app.route('/edit_word.html')
-def edit_word():
-    return render_template("edit_word.html")
+@app.route('/edit_word.html/<word_id>')
+def edit_word(word_id):
+    the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})
+    
+    return render_template("edit_word.html", word=the_word)
 
 @app.route('/delete_word.html')
 def delete_word():

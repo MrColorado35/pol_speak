@@ -1,1 +1,7 @@
 touch env.py
+
+   <!-- <li>
+        <a href="{{url_for('edit_word')}}"><div class="collapsible-header">
+        <i class="material-icons">edit</i>Edit word</div>
+        </a>
+    </li> -->
