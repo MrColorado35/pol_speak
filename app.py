@@ -21,7 +21,7 @@ def index():
 
 @app.route('/user.html')
 def user():
-
+    
     return render_template("user.html", categories=mongo.db.categories.find())
 
 @app.route('/admin.html')
