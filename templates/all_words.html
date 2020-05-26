@@ -13,7 +13,7 @@
             <p class=" center col s6">
              {{ word.eng }} 
             </p>
-            <a class="waves-effect right col s3 margin-right waves-light btn bg-love">DELETE</a>
+            <a href="{{url_for('delete_word', word_id=word._id)}}" class="waves-effect right col s3 margin-right waves-light btn bg-love">DELETE</a>
 
       <!-- <a class="right margin-right bg-blue tall waves-effect waves-light btn center top-one">DELETE</a>          -->
       </div>

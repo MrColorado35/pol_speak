@@ -3,7 +3,7 @@
 
 <h2 class="center">Edit word:</h2>
  <div class="row">
-    <form action="{{ url_for('insert_word') }}" method="POST" class="col s12">
+    <form action="{{url_for('update_word', word_id=word._id)}}" method="POST" class="col s12">
       <div class="row">
         <div class="input-field col s12 m6">
           <input id="english_word" name="eng" type="text" class="validate" value="{{word.eng}}">
@@ -31,7 +31,7 @@
         </div>
        </div>
        <div class="row center">
-            <button class="btn waves-effect waves-light bg-blue" type="submit" >Submit
+            <button class="btn waves-effect waves-light bg-blue" type="submit" >Edit word
             <i class="material-icons right">send</i>
             </button>
         </div>
