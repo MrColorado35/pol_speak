@@ -17,31 +17,43 @@ mongo = PyMongo(app)
 
 categories = mongo.db.categories.find()
 cat_list = [category for category in categories]
+# desc_list = [description for description in categories]
 words = mongo.db.words.find()
+
+
 
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template("index.html")
 
+
 @app.route('/user.html')
-def user():
-    
-    return render_template("user.html", categories=categories)
+def user():    
+    # description = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
+    return render_template("user.html", categories=cat_list)
+
+@app.route('/cat.html/<cat_id>')
+def cat(cat_id):
+    category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
+    return render_template('cat.html', categories=category,  words=words)
+
 
 @app.route('/admin.html')
 def admin():
     return render_template("admin.html")
-    
+
+
 @app.route('/all_words.html')
 def all_words():    
     words= mongo.db.words.find()
     return render_template("all_words.html", words=words )
 
+
 @app.route('/add_word.html')
-def add_word():
-    
+def add_word():    
     return render_template("add_word.html", categories=cat_list, words=words)
+
 
 @app.route('/insert_word', methods=['POST'])
 def insert_word():
@@ -54,6 +66,7 @@ def insert_word():
 def edit_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})    
     return render_template("edit_word.html", word=the_word, categories=cat_list,)
+
 
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
@@ -68,10 +81,12 @@ def update_word(word_id):
     })
     return redirect(url_for('all_words'))
 
+
 @app.route('/delete_word.html/<word_id>')
 def delete_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})  
     return render_template("delete_word.html", word=the_word)
+
 
 @app.route('/remove_word/<word_id>', methods=['POST', 'GET'])
 def remove_word(word_id):

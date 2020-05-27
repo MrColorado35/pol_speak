@@ -13,6 +13,10 @@ body {
     background-color: #a30b37;
 }
 
+ .color-red {
+     color: #a30b37;
+ }
+
 .bg-drk {
     background-color: #2d3142;
     color:  aliceblue;
