@@ -7,12 +7,17 @@ import env
 # The first part of set-ups is inspired by the course materials, mini project "Task Manager":
 app = Flask(__name__)
 
+# os.environ.get('MONGO_URI')
 app.config["MONGO_URI"]= "mongodb+srv://root:r00tUser@myfirstcluster-vdori.mongodb.net/speak?retryWrites=true&w=majority"
 MONGODB_URI = os.getenv("MONGO_URI")
 DBS_NAME = "speak"
 COLLECTION_NAME = "categories"
 
 mongo = PyMongo(app)
+
+categories = mongo.db.categories.find()
+cat_list = [category for category in categories]
+words = mongo.db.words.find()
 
 @app.route('/')
 @app.route('/index')
@@ -22,7 +27,7 @@ def index():
 @app.route('/user.html')
 def user():
     
-    return render_template("user.html", categories=mongo.db.categories.find())
+    return render_template("user.html", categories=categories)
 
 @app.route('/admin.html')
 def admin():
@@ -30,11 +35,13 @@ def admin():
     
 @app.route('/all_words.html')
 def all_words():    
-    return render_template("all_words.html", words=mongo.db.words.find())
+    words= mongo.db.words.find()
+    return render_template("all_words.html", words=words )
 
 @app.route('/add_word.html')
 def add_word():
-    return render_template("add_word.html")
+    
+    return render_template("add_word.html", categories=cat_list, words=words)
 
 @app.route('/insert_word', methods=['POST'])
 def insert_word():
@@ -46,7 +53,7 @@ def insert_word():
 @app.route('/edit_word.html/<word_id>')
 def edit_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})    
-    return render_template("edit_word.html", word=the_word)
+    return render_template("edit_word.html", word=the_word, categories=cat_list,)
 
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
@@ -57,7 +64,7 @@ def update_word(word_id):
         'pol': request.form.get('pol'),
         'read': request.form.get('read'),
         'explaination': request.form.get('explaination'),
-        'cat_name': request.form.get('cat_name')
+        'cat_name': request.form.get('cat_name')        
     })
     return redirect(url_for('all_words'))
 

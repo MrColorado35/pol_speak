@@ -14,7 +14,15 @@ I identified a user as:
 - English speaking person who want to travel to Poland
 - A person who is attracted in Polish-speaking man or woman.
 
+# Deployment
 
+As I had to create all records by myself, I've decided to deploy this app first. It's much comfier to create new records via the app, than in the MongoDB website itself.
+I decided to deploy it on Heroku, as it allows deploying python apps, that will not run on GitHub.
+To do that I had to create Procfile to show their system how to start the app, and keep updated requirements.txt, so it knows what extensions in needs to install in order for app to run.
+Then I needed to log in to Heroku throu GitPod and push it there in the same way as we do with GitHub.
+Of course after any update to the libraries, I need to update requirements.txt file, using my terminal.
+The final steps to make it works was to declare Config Vars, such as IP and PORT.
+With all this in place, I was able to use the app to create new records, what has significantly reduced my usage of GitPod, so my free 100 hours should be enough this month as well.
 
 
 # Credits
