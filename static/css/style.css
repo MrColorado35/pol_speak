@@ -115,6 +115,10 @@ a {
 .no-bottom {
     margin-bottom: 0;
 }
+
+.uppercase {
+    text-transform: uppercase;
+}
 /* ----------------------------------- Nav  */
 
 nav {

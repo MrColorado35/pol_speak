@@ -1,6 +1,28 @@
 {% extends 'base_two.html' %}
 {% block content %} 
 
-<h2>it works</h2>
+    <h2 class="center uppercase">{{ category.cat_name }}</h2>
+    <h3 class="center">{{ category.description }}: </h3>
+
+        {% if words.cat_name == "work" %}
+
+            {% for word in words %} 
+            <li>
+            <div class="collapsible-header"><i class="material-icons">expand_more</i>
+            {{ words.eng}}
+            </div>  
+            <div class="collapsible-body center"><div class="bg-love">
+                <p>Polish: &emsp; {{ word.pol }} </p>
+                <p>Pronounce: &emsp; {{ word.read }}</p></div>
+                <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p>                 
+            </div>        
+            </li>
+      
+            
+
+            {% endfor %}    
+        {% else %} 
+        <p>It's stupid and it does not work</p>
+    {% endif %}
 
 {% endblock %}

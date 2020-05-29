@@ -2,16 +2,19 @@
 
 {% extends 'base_two.html' %}
 {% block content %} 
-    <h2 class="center">Here is a list of categories of words:</h2>
-
+    <h2 class="center">Here is a list of categories of words,</h2>
+    <h3 class="center">Choose one to get the list of words useful in chosen enviroment.</h3>
     <ul class="collapsible popout" data-collapsible="accordion">
     {% for cat in categories %}
     <li>
         <a href="{{ url_for('cat', cat_id=cat._id) }}">
-      <div class="collapsible-header"><i class="material-icons">expand_more</i> {{ cat.cat_name}}</div>
-     </a>
-      <div class="collapsible-body"><span>{{ cat.decription }}</span></div>
-    
+      <div class="collapsible-header"><i class="material-icons">expand_more</i>
+      <!-- <a href="{{ url_for('cat', cat_id=cat._id) }}"> -->
+       {{ cat.cat_name}}
+       <!-- </a> -->
+       </div>  
+       </a>   
+      <div class="collapsible-body"><span>{{ categories.decription }}</span></div>    
     </li>
     {% endfor %}
   </ul>

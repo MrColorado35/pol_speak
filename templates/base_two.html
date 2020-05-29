@@ -23,12 +23,15 @@
 <body>
     <nav class="bg-drk">
         <div class="nav-wrapper">
-        <a href="{{url_for('index')}}" class="brand-logo right">Pol_speak</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="{{url_for('admin')}}">Work</a></li>
-                <li><a href="{{url_for('user')}}">Romance</a></li>
-                <li><a href="{{url_for('all_words')}}">NSFW</a></li>
-                <li><a href="{{url_for('add_word')}}">Other</a></li>
+        <a href="{{url_for('user')}}" class="brand-logo right">Pol_speak</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">               
+                    {% for cat in categories %}
+                
+                  <li>  <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
+                        {{ cat.cat_name}}
+                </a>   </li>
+                    {% endfor %}
+
             </ul>
         </div>
     </nav>

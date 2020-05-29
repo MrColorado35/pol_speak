@@ -8,7 +8,7 @@ import env
 app = Flask(__name__)
 
 # os.environ.get('MONGO_URI')
-app.config["MONGO_URI"]= "mongodb+srv://root:r00tUser@myfirstcluster-vdori.mongodb.net/speak?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@myfirstcluster-vdori.mongodb.net/speak?retryWrites=true&w=majority"
 MONGODB_URI = os.getenv("MONGO_URI")
 DBS_NAME = "speak"
 COLLECTION_NAME = "categories"
@@ -19,7 +19,6 @@ categories = mongo.db.categories.find()
 cat_list = [category for category in categories]
 # desc_list = [description for description in categories]
 words = mongo.db.words.find()
-
 
 
 @app.route('/')
@@ -33,10 +32,14 @@ def user():
     # description = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     return render_template("user.html", categories=cat_list)
 
-@app.route('/cat.html/<cat_id>')
-def cat(cat_id):
+
+@app.route('/cat.html/<cat_id>, ')
+def cat(cat_id): 
+
     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
-    return render_template('cat.html', categories=category,  words=words)
+    # cat_name = mongo.db.collection.find('cat_name')
+    # words_choosen = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
+    return render_template('cat.html', categories=categories, category=category,  words=words)
 
 
 @app.route('/admin.html')
@@ -45,13 +48,13 @@ def admin():
 
 
 @app.route('/all_words.html')
-def all_words():    
-    words= mongo.db.words.find()
-    return render_template("all_words.html", words=words )
+def all_words():
+    words = mongo.db.words.find()
+    return render_template("all_words.html", words=words)
 
 
 @app.route('/add_word.html')
-def add_word():    
+def add_word():
     return render_template("add_word.html", categories=cat_list, words=words)
 
 
@@ -71,7 +74,7 @@ def edit_word(word_id):
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
     words = mongo.db.words
-    words.update( {'_id': ObjectId(word_id)}, 
+    words.update({'_id': ObjectId(word_id)}, 
     {
         'eng': request.form.get('eng'),     
         'pol': request.form.get('pol'),
