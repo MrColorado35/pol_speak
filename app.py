@@ -33,13 +33,19 @@ def user():
     return render_template("user.html", categories=cat_list)
 
 
-@app.route('/cat.html/<cat_id>, ')
+@app.route('/cat.html/<cat_id>')
 def cat(cat_id): 
 
     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
-    # cat_name = mongo.db.collection.find('cat_name')
+    words = mongo.db.words.find({'cat_name': "work"})
+    romances = mongo.db.words.find({'cat_name': "romance"})
+    nsfws = mongo.db.words.find({'cat_name': "NSFW"})
+    others = mongo.db.words.find({'cat_name': "other"})
+    # word = mongo.db.find_one()
+    # cat_name = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
     # words_choosen = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
-    return render_template('cat.html', categories=categories, category=category,  words=words)
+    return render_template('cat.html', category=category,
+        words=words, romances=romances, nsfws=nsfws, others=others)
 
 
 @app.route('/admin.html')
