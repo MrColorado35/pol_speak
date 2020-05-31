@@ -14,6 +14,15 @@ I identified a user as:
 - English speaking person who want to travel to Poland
 - A person who is attracted in Polish-speaking man or woman.
 
+# Testing
+
+Throughout the proccess of creation, I was constantly testing every new functionality of my app.
+As I learned during my previous projects, I was testing one change at a time.
+The biggest issue, that took me three days of thinking and researching to solve, was how to connect all the words of one category and present them to the user in a right place.
+On the beginning I was trying to use "if" statement (as in commit at 29th May), but none of the versions I tried works.
+Googling it brought me many different ways, that wasn't suitable for my needs.
+Despite an advice given by my mentor, to create a "sub-collection" in my app.py file, I decided to find my own way and that's the one I've got a pleasure to present here.
+
 # Deployment
 
 As I had to create all records by myself, I've decided to deploy this app first. It's much comfier to create new records via the app, than in the MongoDB website itself.

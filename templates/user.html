@@ -2,8 +2,11 @@
 
 {% extends 'base_two.html' %}
 {% block content %} 
-    <h2 class="center">Here is a list of categories of words,</h2>
-    <h3 class="center">Choose one to get the list of words useful in chosen enviroment.</h3>
+   <div class=" bg-love padding-5 margin">
+
+    <h3 class="center">Here is a list of categories of words,</h3>
+    <h4 class="center">Choose one to get the list of words useful in chosen enviroment.</h4>
+   </div>
     <ul class="collapsible popout" data-collapsible="accordion">
     {% for cat in categories %}
     <li>
