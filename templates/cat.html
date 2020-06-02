@@ -1,8 +1,10 @@
 {% extends 'base_two.html' %}
 {% block content %} 
+<div class="bg-love padding-5 margin border">
 
-    <h2 class="center uppercase">{{ category.cat_name }}</h2>
+    <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
     <h3 class="center">{{ category.description }}: </h3>
+</div>
     {% if category.cat_name == 'work' %}
         {% for word in words %} 
 

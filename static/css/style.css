@@ -116,6 +116,11 @@ a {
     object-position: right;
 } */
 
+.border {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
 .no-bottom {
     margin-bottom: 0;
 }

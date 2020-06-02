@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="row center">
-        <h2 class="col s12">Are you sure you want to delete '{{ word.eng }}' ?</h2>
+        <h2 class="col s12 border bg-love">Are you sure you want to delete <br> '{{ word.eng }}' ?</h2>
         <div class="col s6">
             <a href="{{url_for('all_words')}}" class="waves-effect waves-light bg-love btn">Cancel</a>
         </div>
