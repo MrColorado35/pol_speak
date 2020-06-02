@@ -7,21 +7,35 @@ From the user perspective, this project is supposed to help in a in-work communi
 if they see you trying to communicate with them in their language.
 Here, hopefully, I can provide a tool, that will allow dear users to do so.
 
+It's worth to mention, that during the process of creation this app, there was a need for very similar one, for the fandom of "The Name of The Wind", one of the greatest books of all time.
+I decided to use part of the code from this app, to create enviroment for our community to share the ideas for sign language, that will express emotions, while we are covering our faces.
+I even consiedered to change it to my Milestone Project, but then realised that more people will participate in it and I could not say that it's my own project on the end, even though the code will be my own.
+
+
 # UI 
 I identified a user as:
 - a person who works with immigrants from Poland in the warehouse or office,
 - someone willing to learn few words in new language, without care for grammar etc,
-- English speaking person who want to travel to Poland
 - A person who is attracted in Polish-speaking man or woman.
+- Firstly I thought about potentiall travelers to Poland, but then I realised that there's huge amount of websites that cover this topic, while no-one focused on Polish co-workers.
+
+
 
 # Testing
 
 Throughout the proccess of creation, I was constantly testing every new functionality of my app.
 As I learned during my previous projects, I was testing one change at a time.
+
 The biggest issue, that took me three days of thinking and researching to solve, was how to connect all the words of one category and present them to the user in a right place.
-On the beginning I was trying to use "if" statement (as in commit at 29th May), but none of the versions I tried works.
+On the beginning I was trying to use various "if" statements (as in commit at 29th May), but none of the versions I tried works.
 Googling it brought me many different ways, that wasn't suitable for my needs.
-Despite an advice given by my mentor, to create a "sub-collection" in my app.py file, I decided to find my own way and that's the one I've got a pleasure to present here.
+Finally I managed to find my own way and that's the one I've got a pleasure to present here in a commit at 31st of May.
+Although I believe there's easier way, that will allow me to avoid repeating the "if" statement so many times.
+I'm going to change it just after I'll work it out.
+
+Another interesting test was to send it to few of my English friends and ask them for their opinion.
+I'm still waiting for their feedback, this section will be updated once I will recieve one.
+
 
 # Deployment
 
