@@ -147,3 +147,11 @@ footer {
     width: 100%;
 
 }
+
+/* ----------------------------------- Contact */
+
+textarea {
+    height: 120px;
+    background-color: #d7dedc;
+    opacity: 0.5;
+}

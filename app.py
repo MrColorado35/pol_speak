@@ -8,6 +8,7 @@ import env
 app = Flask(__name__)
 
 # os.environ.get('MONGO_URI')
+# os.getenv('MONGO_URI')
 app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@myfirstcluster-vdori.mongodb.net/speak?retryWrites=true&w=majority"
 MONGODB_URI = os.getenv("MONGO_URI")
 DBS_NAME = "speak"
