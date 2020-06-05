@@ -29,14 +29,13 @@ def index():
 
 
 @app.route('/user.html')
-def user():    
+def user():
     # description = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     return render_template("user.html", categories=cat_list)
 
 
 @app.route('/cat.html/<cat_id>')
-def cat(cat_id): 
-
+def cat(cat_id):
     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     words = mongo.db.words.find({'cat_name': "work"})
     romances = mongo.db.words.find({'cat_name': "romance"})
