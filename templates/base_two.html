@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Base_two is a trap for any user, that came here to learn. It does not allow user to go back to the main menu and to admin page. I decided to do it, to avoid vandalisms and jokes made by users. Of course if anyone will get a link to full app, it's enough to open it through the link (or go back in a browser) to get there. I just hope that someone who would like to destroy my work will be to lazy to do it. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -24,7 +25,8 @@
     <nav class="bg-drk">
         <div class="nav-wrapper">
         <a href="{{url_for('user')}}" class="brand-logo right">Pol_speak</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">               
+            <ul id="nav-mobile" class="left hide-on-med-and-down"> 
+
                     {% for cat in categories %}
                 
                   <li>  <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
@@ -52,7 +54,7 @@
             <div class="col s12 m4">
                 <h6 class="center">Contact us</h6>
                 <p class="justify">Have you got an idea for more words or sentences that you would like to learn?</p>
-                <a href="contact.html">Please contact us by clicking here</a>
+                <a href="{{url_for('contact')}}">Please contact us by clicking here</a>
             </div>
             <div class="col s12 m4">
                 <h6 class="center">Social Media</h6>
