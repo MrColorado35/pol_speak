@@ -39,6 +39,10 @@ body {
     background-color: inherit;
 }
 
+.letters-black {
+    color: #0b0b0b;
+}
+
 /* .float-right {
     float: right;
     clear: both;
@@ -81,6 +85,10 @@ a {
 
 .padding-left {
     padding-left: 20%;
+}
+
+.padding-bottom {
+    padding-bottom: 5%;
 }
 
 .margin-top {
