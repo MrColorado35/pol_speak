@@ -46,8 +46,8 @@
         <a href="{{url_for('user')}}" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down"> 
-                 <li><a href="{{url_for('user')}}">All categories</a></li>
-                    
+                 <li><a class="uppercase" href="{{url_for('user')}}">All categories</a></li>
+                                     
                     {% for cat in categories %}                
                   <li>  <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
                         {{ cat.cat_name}}
