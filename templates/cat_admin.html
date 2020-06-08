@@ -8,16 +8,26 @@
     {% if category.cat_name == 'work' %}
         {% for word in words %} 
 
+<!--  <div class="collapsible-header ">
+            <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
+            <p class=" center col s6"><i class="left material-icons">expand_more</i> {{ word.eng }} 
+            </p>
+            <a href="{{url_for('delete_word', word_id=word._id)}}" class="waves-effect right col s3 margin-right waves-light btn bg-love">DELETE</a> -->
         <ul class="collapsible popout" data-collapsible="accordion">
             
             <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
-                {{ word.eng}}
+                <div class="collapsible-header center">
+                 
+                <p class=" center col s6"><i class=" material-icons">expand_more</i>
+                 {{ word.eng }} 
+                </p>
+                <p class="right col s3"></p>
                 </div>  
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ word.pol }} </p>
                     <p>Pronounce: &emsp; {{ word.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p>                 
+                    <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p> 
+                    <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light bg-blue btn">EDIT</a>                
                 </div>        
             </li>
         </ul>
@@ -36,7 +46,8 @@
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ romance.pol }} </p>
                     <p>Pronounce: &emsp; {{ romance.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ romance.explaination }}</strong></p>                 
+                    <p>Remember: &emsp;<strong>{{ romance.explaination }}</strong></p>     
+                    <a href="{{url_for('edit_word', word_id=romance._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>            
                 </div>        
             </li>
         </ul>
@@ -54,7 +65,8 @@
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ nsfw.pol }} </p>
                     <p>Pronounce: &emsp; {{ nsfw.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ nsfw.explaination }}</strong></p>                 
+                    <p>Remember: &emsp;<strong>{{ nsfw.explaination }}</strong></p>
+                    <a href="{{url_for('edit_word', word_id=nsfw._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>                 
                 </div>        
             </li>
         </ul>
@@ -72,7 +84,8 @@
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ other.pol }} </p>
                     <p>Pronounce: &emsp; {{ other.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ other.explaination }}</strong></p>                 
+                    <p>Remember: &emsp;<strong>{{ other.explaination }}</strong></p>
+                    <a href="{{url_for('edit_word', word_id=other._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>                
                 </div>        
             </li>
         </ul>
