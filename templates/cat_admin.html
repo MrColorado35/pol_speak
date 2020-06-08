@@ -3,16 +3,12 @@
 <div class="bg-love padding-5 margin border">
 
     <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
-    <h3 class="center">{{ category.description }}: </h3>
+    <h6 class="center">{{ category.description }}: </h6>
 </div>
     {% if category.cat_name == 'work' %}
         {% for word in words %} 
 
-<!--  <div class="collapsible-header ">
-            <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
-            <p class=" center col s6"><i class="left material-icons">expand_more</i> {{ word.eng }} 
-            </p>
-            <a href="{{url_for('delete_word', word_id=word._id)}}" class="waves-effect right col s3 margin-right waves-light btn bg-love">DELETE</a> -->
+
         <ul class="collapsible popout" data-collapsible="accordion">
             
             <li>
