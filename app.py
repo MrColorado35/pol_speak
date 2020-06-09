@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import env
@@ -7,19 +7,12 @@ import env
 # The first part of set-ups is inspired by the course materials, mini project "Task Manager":
 app = Flask(__name__)
 
-# os.environ.get('MONGO_URI')
-# os.getenv('MONGO_URI')
-app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@myfirstcluster-vdori.mongodb.net/speak?retryWrites=true&w=majority"
-MONGODB_URI = os.getenv("MONGO_URI")
-DBS_NAME = "speak"
-COLLECTION_NAME = "categories"
-
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
-categories = mongo.db.categories.find()
-cat_list = [category for category in categories]
-# desc_list = [description for description in categories]
-words = mongo.db.words.find()
+CATEGORIES = mongo.db.categories.find()
+cat_list = list(CATEGORIES)
+ALL_WORDS = mongo.db.words.find()
 
 # This decorator brings us the main page
 @app.route('/')
@@ -44,7 +37,7 @@ def cat(cat_id):
     # word = mongo.db.find_one()
     # cat_name = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
     # words_choosen = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
-    return render_template('cat.html', category=category, categories=categories,
+    return render_template('cat.html', category=category, categories=CATEGORIES,
         words=words, romances=romances, nsfws=nsfws, others=others)
 
 # Brings page for Admin, with a list of all options that admin is allowed to do.
@@ -61,13 +54,16 @@ def all_words():
 # That part of code allows Admin to add new words in a new page, dedicated to it.
 @app.route('/add_word.html')
 def add_word():
-    return render_template("add_word.html", categories=cat_list, words=words)
+    return render_template("add_word.html", categories=cat_list, words=ALL_WORDS)
 
 
 @app.route('/insert_word', methods=['POST'])
 def insert_word():
-    words = mongo.db.words
-    words.insert_one(request.form.to_dict())
+    try:
+        words = mongo.db.words
+        words.insert_one(request.form.to_dict())
+    except:
+        flash("Unknown error. please try again.")
     return redirect(url_for('all_words'))
 
 # This bit of code allows us to edit all aspects of any word in the database
@@ -80,14 +76,18 @@ def edit_word(word_id):
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
     words = mongo.db.words
-    words.update({'_id': ObjectId(word_id)}, 
-    {
-        'eng': request.form.get('eng'),     
-        'pol': request.form.get('pol'),
-        'read': request.form.get('read'),
-        'explaination': request.form.get('explaination'),
-        'cat_name': request.form.get('cat_name')        
-    })
+    try:
+        words.update({'_id': ObjectId(word_id)}, 
+        {
+            'eng': request.form.get('eng'),
+            'pol': request.form.get('pol'),
+            'read': request.form.get('read'),
+            'explaination': request.form.get('explaination'),
+            'cat_name': request.form.get('cat_name')        
+        })
+    except Exception:
+        flash("There was an error with your querry, please try again")
+       
     return redirect(url_for('all_words'))
 
 # These are allowing admin to permanently delete any word from the database. I'm still unsure if I should leave it while 
@@ -127,7 +127,6 @@ def cat_admin(cat_id):
     
     return render_template('cat_admin.html', category=category,
         words=words, romances=romances, nsfws=nsfws, others=others,)
-
 
 
 if __name__ == '__main__':
