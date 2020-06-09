@@ -21,38 +21,45 @@ def index():
     return render_template("index.html")
 
 # If we choose that we want to learn Polish, here's where we go
-@app.route('/user.html')
+@app.route('/user')
 def user():
     # description = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     return render_template("user.html", categories=cat_list)
 
 # Allows us to see all categories and then all the words in specific order.
-@app.route('/cat.html/<cat_id>')
+@app.route('/cat/<cat_id>')
 def cat(cat_id):
+    # try:
+    #     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
+    # except Exception:
+    #     flash("There was an error getting the category")
+    #     redirect(url_for('user.html'))
+
     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     words = mongo.db.words.find({'cat_name': "work"})
     romances = mongo.db.words.find({'cat_name': "romance"})
     nsfws = mongo.db.words.find({'cat_name': "NSFW"})
     others = mongo.db.words.find({'cat_name': "other"})
+
     # word = mongo.db.find_one()
     # cat_name = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
     # words_choosen = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
     return render_template('cat.html', category=category, categories=CATEGORIES,
-        words=words, romances=romances, nsfws=nsfws, others=others)
+        words=words,  romances=romances, nsfws=nsfws, others=others)
 
 # Brings page for Admin, with a list of all options that admin is allowed to do.
-@app.route('/admin.html')
+@app.route('/admin')
 def admin():
     return render_template("admin.html")
 
 # Provide an access to all words without keeping them in order.
-@app.route('/all_words.html')
+@app.route('/all_words')
 def all_words():
     words = mongo.db.words.find()
     return render_template("all_words.html", words=words)
 
 # That part of code allows Admin to add new words in a new page, dedicated to it.
-@app.route('/add_word.html')
+@app.route('/add_word')
 def add_word():
     return render_template("add_word.html", categories=cat_list, words=ALL_WORDS)
 
@@ -93,7 +100,7 @@ def update_word(word_id):
 # These are allowing admin to permanently delete any word from the database. I'm still unsure if I should leave it while 
 # letting people to use my app freely.
 
-@app.route('/delete_word.html/<word_id>')
+@app.route('/delete_word/<word_id>')
 def delete_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})  
     return render_template("delete_word.html", word=the_word)
@@ -106,18 +113,18 @@ def remove_word(word_id):
 
 # This one allows us to go to contact page. This is also a trick to help to come out from the "user's trap" that I 
 # created earlier and that will not allow users to go back to admin page through the menu
-@app.route('/contact.html')
+@app.route('/contact')
 def contact():
     return render_template("contact.html")
 
 # Thats my newest idea, to allow an admin to see words divided by categories, not only as a pile of all words from 
 # the websie together, kept without any order
 
-@app.route('/admin_cat.html')
+@app.route('/admin_cat')
 def admin_cat():
     return render_template("admin_cat.html", categories=cat_list)
 
-@app.route('/cat_admin.html/<cat_id>')
+@app.route('/cat_admin/<cat_id>')
 def cat_admin(cat_id):
     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     words = mongo.db.words.find({'cat_name': "work"})

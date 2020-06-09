@@ -3,10 +3,10 @@
     <div class="row center">
         <h2 class="col s12 border bg-love">Are you sure you want to delete <br> '{{ word.eng }}' ?</h2>
         <div class="col s6">
-            <a href="{{url_for('all_words')}}" class="waves-effect waves-light bg-love btn">Cancel</a>
+            <a href="{{url_for('all_words')}}" class="waves-effect waves-light bg-drk btn">Cancel</a>
         </div>
         <div class="col s6">
-            <a href="{{url_for('remove_word', word_id=word._id)}}" class="waves-effect waves-light bg-drk btn">I'm sure</a>
+            <a href="{{url_for('remove_word', word_id=word._id)}}" class="waves-effect waves-light bg-redish btn">I'm sure</a>
         </div>
     </div>
 
