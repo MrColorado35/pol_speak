@@ -74,7 +74,7 @@ def insert_word():
     return redirect(url_for('all_words'))
 
 # This bit of code allows us to edit all aspects of any word in the database
-@app.route('/edit_word.html/<word_id>')
+@app.route('/edit_word/<word_id>')
 def edit_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})    
     return render_template("edit_word.html", word=the_word, categories=cat_list,)
