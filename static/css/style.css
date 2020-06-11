@@ -19,7 +19,7 @@ body {
  }
 
 .bg-drk {
-    background-color: #2d3142;
+    background-color: #4a516d;
     color:  aliceblue;
 }
 
@@ -28,13 +28,13 @@ body {
 }
 
 .bg-love {
-    background-color: #561f37;
+    background-color: #873156;
     color: aliceblue;
 }
 
-.bg-new {
+/* .bg-new {
     background-color: #8BE2E5;
-}
+} */
 
 .bg-morenew {
     background-color: #DFA5BE;
