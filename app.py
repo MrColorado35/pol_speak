@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-import env
+
 
 # The first part of set-ups is inspired by the course materials, mini project "Task Manager":
 app = Flask(__name__)
@@ -44,7 +44,7 @@ def cat(cat_id):
     # word = mongo.db.find_one()
     # cat_name = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
     # words_choosen = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
-    return render_template('cat.html', category=category, categories=CATEGORIES,
+    return render_template('cat.html', category=category, categories=cat_list,
         words=words,  romances=romances, nsfws=nsfws, others=others)
 
 # Brings page for Admin, with a list of all options that admin is allowed to do.

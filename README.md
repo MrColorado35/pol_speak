@@ -27,7 +27,12 @@ This also allows me to send a link for 'student' only, if I don't trust them too
 The 'Admin', on the other hand, has access to full  spectrum of CRUD operations.
 There are doors for the user to come back from 'Student' to 'Admin' page, through the 'Contact' page, that is linked in the footer.
 Of course if potentiall users will recive link to the full app, they can just open it again or hit 'back' button enough times.
-I just believe, that someone who would like to only damage my database will be too lazy to do so. f
+I just believe, that someone who would like to only damage my database will be too lazy to do so.
+For the same reason there are two, almost identical pages called 'cat' and 'cat_admin'.
+'cat_admin' allows user to edit any word and has an admin menu.
+
+Due to the way how my database is made, I do not allow users to create new categories. They can only choose one of four, but in my honest opinion that's enough for the current level of complicity.
+
 
 # Testing
 
