@@ -52,10 +52,7 @@ body {
     color: #0b0b0b;
 }
 
-/* .float-right {
-    float: right;
-    clear: both;
-} */
+
 /* --------------------------------------- General style */
 
 .block {
@@ -159,7 +156,6 @@ footer {
     display: block;
     position:relative;
     bottom: 0;
-    /* margin-bottom: 0!important; */
     min-height: 100px;
     width: 100%;
 

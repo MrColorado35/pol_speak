@@ -2,7 +2,7 @@
 
 {% extends 'base.html' %}
 {% block content %} 
-<div class="bg-love padding-5 margin border">
+<div class="bg-morenew padding-5 margin border">
 
     <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
     <h6 class="center">{{ category.description }}: </h6>
@@ -15,11 +15,9 @@
             
             <li>
                 <div class="collapsible-header center">
-                 
-                <p class=" center col s6"><i class=" material-icons">expand_more</i>
+                <p class=" center "><i class=" material-icons">expand_more</i>
                  {{ word.eng }} 
                 </p>
-                <p class="right col s3"></p>
                 </div>  
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ word.pol }} </p>
@@ -38,8 +36,10 @@
         <ul class="collapsible popout" data-collapsible="accordion">
             
             <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
+                <div class="collapsible-header">
+                <p class=" center "><i class=" material-icons">expand_more</i>
                 {{ romance.eng}}
+                </p>
                 </div>  
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ romance.pol }} </p>
@@ -57,8 +57,10 @@
         <ul class="collapsible popout" data-collapsible="accordion">
             
             <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
+                <div class="collapsible-header">
+                <p class=" center "><i class=" material-icons">expand_more</i>
                 {{ nsfw.eng}}
+                </p>
                 </div>  
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ nsfw.pol }} </p>
@@ -76,8 +78,10 @@
         <ul class="collapsible popout" data-collapsible="accordion">
             
             <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
+                <div class="collapsible-header">
+                <p class=" center "><i class=" material-icons">expand_more</i>
                 {{ other.eng}}
+                </p>
                 </div>  
                 <div class="collapsible-body center"><div class="bg-love">
                     <p>Polish: &emsp; {{ other.pol }} </p>

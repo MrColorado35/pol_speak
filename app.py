@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import env
 
 
 # The first part of set-ups is inspired by the course materials, mini project "Task Manager":
@@ -69,14 +70,14 @@ def insert_word():
     try:
         words = mongo.db.words
         words.insert_one(request.form.to_dict())
-    except:
+    except Exception:
         flash("Unknown error. please try again.")
     return redirect(url_for('all_words'))
 
 # This bit of code allows us to edit all aspects of any word in the database
 @app.route('/edit_word/<word_id>')
 def edit_word(word_id):
-    the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})    
+    the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})
     return render_template("edit_word.html", word=the_word, categories=cat_list,)
 
 
@@ -84,7 +85,7 @@ def edit_word(word_id):
 def update_word(word_id):
     words = mongo.db.words
     try:
-        words.update({'_id': ObjectId(word_id)}, 
+        words.update({'_id': ObjectId(word_id)},
         {
             'eng': request.form.get('eng'),
             'pol': request.form.get('pol'),
@@ -95,10 +96,12 @@ def update_word(word_id):
     except Exception:
         flash("There was an error with your querry, please try again")
        
+
     return redirect(url_for('all_words'))
 
-# These are allowing admin to permanently delete any word from the database. I'm still unsure if I should leave it while 
+# These are allowing admin to permanently delete any word from the database. I'm still unsure if I should leave it while
 # letting people to use my app freely.
+
 
 @app.route('/delete_word/<word_id>')
 def delete_word(word_id):
@@ -120,9 +123,11 @@ def contact():
 # Thats my newest idea, to allow an admin to see words divided by categories, not only as a pile of all words from 
 # the websie together, kept without any order
 
+
 @app.route('/admin_cat')
 def admin_cat():
     return render_template("admin_cat.html", categories=cat_list)
+
 
 @app.route('/cat_admin/<cat_id>')
 def cat_admin(cat_id):
