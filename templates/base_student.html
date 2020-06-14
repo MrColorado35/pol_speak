@@ -10,36 +10,21 @@
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
-  <!-- Import CSS from Bootstrap, Font-awesome and Materialize -->
+  <!-- Import Font-awesome and Materialize -->
 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<script src="https://kit.fontawesome.com/714c36b7b0.js" crossorigin="anonymous"></script>
+
 
 <!--Import Google Fonts-->
 <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <!-- Import embedded CSS -->
 <link rel="stylesheet" href="../static/css/style.css">
 <title>Pol_speak. Learn few useful Polish words</title>
 </head>
 <body>
- <!--   <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav> -->
+ 
     <nav class="bg-drk">
         <div class="nav-wrapper">
         <a href="{{url_for('user')}}" class="brand-logo right">Pol_speak</a>
@@ -89,17 +74,31 @@
             </div>
             <div class="col s12 m4">
                 <h6 class="center">Social Media</h6>
+                    <ul class="center">
+                        <li> 
+                            <a href="https://www.facebook.com/stan.kaczorkiewicz" target="_blank" class="">
+                            <i class="fab fa-facebook"></i></a> 
+                        </li>
+                        <li> 
+                            <a href="https://www.linkedin.com/in/stan-kaczorkiewicz-94a146195/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i></a> 
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/navigare_necesse_est_i_huj/" target="_blank">
+                            <i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
 
             </div>
         </div>
     </footer>
 <!-- Import JavaScript -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script>
     $(document).ready(function() {
     $('select').material_select();
+    $(".button-collapse").sideNav();
   });
   </script>
 </body>
