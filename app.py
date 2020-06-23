@@ -30,23 +30,15 @@ def user():
 # Allows us to see all categories and then all the words in specific order.
 @app.route('/cat/<cat_id>')
 def cat(cat_id):
-    # try:
-    #     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
-    # except Exception:
-    #     flash("There was an error getting the category")
-    #     redirect(url_for('user.html'))
-
+  
     category = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     words = mongo.db.words.find({'cat_name': "work"})
     romances = mongo.db.words.find({'cat_name': "romance"})
     nsfws = mongo.db.words.find({'cat_name': "NSFW"})
     others = mongo.db.words.find({'cat_name': "other"})
 
-    # word = mongo.db.find_one()
-    # cat_name = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
-    # words_choosen = mongo.db.words.find({'cat_name': ObjectId(cat_name)})
     return render_template('cat.html', category=category, categories=cat_list,
-        words=words,  romances=romances, nsfws=nsfws, others=others)
+        words=words, romances=romances, nsfws=nsfws, others=others)
 
 # Brings page for Admin, with a list of all options that admin is allowed to do.
 @app.route('/admin')
