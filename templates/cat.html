@@ -1,88 +1,80 @@
 <!-- Here the user has an access to all words within database (divided by 4 categories), without ability to change them.
-The only way to go back to the main menu is through the link to contact page, that is in the footer. -->
+   The only way to go back to the main menu is through the link to contact page, that is in the footer. -->
 {% extends 'base_student.html' %}
 {% block content %} 
 <div class="bg-morenew padding-5 margin border">
-
-    <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
-    <h3 class="center">{{ category.description }}: </h3>
+   <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
+   <h3 class="center">{{ category.description }}: </h3>
 </div>
-    {% if category.cat_name == 'work' %}
-        {% for word in words %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
-                {{ word.eng}}
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ word.pol }} </p>
-                    <p>Pronounce: &emsp; {{ word.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p>                 
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-
-    {% elif category.cat_name == 'romance' %}
-          {% for romance in romances %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
-                {{ romance.eng}}
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ romance.pol }} </p>
-                    <p>Pronounce: &emsp; {{ romance.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ romance.explaination }}</strong></p>                 
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-     {% elif category.cat_name == 'NSFW' %}
-          {% for nsfw in nsfws %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
-                {{ nsfw.eng}}
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ nsfw.pol }} </p>
-                    <p>Pronounce: &emsp; {{ nsfw.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ nsfw.explaination }}</strong></p>                 
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-    {% elif category.cat_name == 'other' %}
-          {% for other in others %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header"><i class="material-icons">expand_more</i>
-                {{ other.eng}}
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ other.pol }} </p>
-                    <p>Pronounce: &emsp; {{ other.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ other.explaination }}</strong></p>                 
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-    {% else %}
-        <div class="center">There is no such category yet, please try again</div>
-
-    {% endif %}
-
+{% if category.cat_name == 'work' %}
+{% for word in words %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header"><i class="material-icons">expand_more</i>
+         {{ word.eng}}
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ word.pol }} </p>
+            <p>Pronounce: &emsp; {{ word.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p>
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% elif category.cat_name == 'romance' %}
+{% for romance in romances %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header"><i class="material-icons">expand_more</i>
+         {{ romance.eng}}
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ romance.pol }} </p>
+            <p>Pronounce: &emsp; {{ romance.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ romance.explaination }}</strong></p>
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% elif category.cat_name == 'NSFW' %}
+{% for nsfw in nsfws %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header"><i class="material-icons">expand_more</i>
+         {{ nsfw.eng}}
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ nsfw.pol }} </p>
+            <p>Pronounce: &emsp; {{ nsfw.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ nsfw.explaination }}</strong></p>
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% elif category.cat_name == 'other' %}
+{% for other in others %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header"><i class="material-icons">expand_more</i>
+         {{ other.eng}}
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ other.pol }} </p>
+            <p>Pronounce: &emsp; {{ other.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ other.explaination }}</strong></p>
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% else %}
+<div class="center">There is no such category yet, please try again</div>
+{% endif %}
 {% endblock %}

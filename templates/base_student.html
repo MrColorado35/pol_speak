@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <!-- Base_two is a trap for any user, that came here to learn. It does not allow user to go back to the main menu and to admin page. I decided to do it, to avoid vandalisms and jokes made by users. Of course if anyone will get a link to full app, it's enough to open it through the link (or go back in a browser) to get there. I just hope that someone who would like to destroy my work will be to lazy to do it. -->
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- Import jQuery -->
-<script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-  <!-- Import Font-awesome and Materialize -->
-<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-<script src="https://kit.fontawesome.com/714c36b7b0.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Import jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Import Font-awesome and Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://kit.fontawesome.com/714c36b7b0.js" crossorigin="anonymous"></script>
 
 
-<!--Import Google Fonts-->
-<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- Import embedded CSS -->
-<link rel="stylesheet" href="../static/css/style.css">
-<title>Pol_speak. Learn few useful Polish words</title>
+    <!-- Import embedded CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Pol_speak. Learn few useful Polish words</title>
 </head>
+
 <body>
- 
+
     <nav class="bg-drk">
         <div class="nav-wrapper">
-        <a href="{{url_for('user')}}" class="brand-logo right">Pol_speak</a>
-        <a href="{{url_for('user')}}" data-activates="mobile-demo" class="button-collapse">
+            <a href="{{url_for('user')}}" class="brand-logo right">Pol_speak</a>
+            <a href="{{url_for('user')}}" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down"> 
-                 <li><a class="uppercase" href="{{url_for('user')}}">All categories</a></li>
-                                     
-                    {% for cat in categories %}                
-                  <li>  <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a class="uppercase" href="{{url_for('user')}}">All categories</a></li>
+
+                {% for cat in categories %}
+                <li> <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
                         {{ cat.cat_name}}
-                </a>   </li>
-                    {% endfor %}
+                </a> </li>
+                {% endfor %}
             </ul>
-             <ul class="side-nav" id="mobile-demo">
-             
+            <ul class="side-nav" id="mobile-demo">
+
                 <li><a href="{{url_for('user')}}">All categories</a></li>
 
-                 {% for cat in categories %}                
-                  <li>  <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
+                {% for cat in categories %}
+                <li> <a href="{{ url_for('cat', cat_id=cat._id) }}" class="uppercase">            
                         {{ cat.cat_name}}
-                </a>   </li>
-                    {% endfor %}
-        
-             </ul>
+                </a> </li>
+                {% endfor %}
+
+            </ul>
         </div>
     </nav>
     <div class="container whole-page">
 
-        {% block content %}
-
-
-        {% endblock %}
+        {% block content %} {% endblock %}
     </div>
     <footer class="bg-love margin-top">
         <div class="row no-bottom">
             <div class="col s12 m4">
                 <h6 class="center">The reason</h6>
-                <p class="justify">This simple app has been made, to provide you with some common words and sentences in        Polish.</p>
+                <p class="justify">This simple app has been made, to provide you with some common words and sentences in Polish.</p>
                 <p class="justify">It will enable you to make quick friends of any Poles you will ever meet.</p>
             </div>
             <!-- The link to contact page is a way for any user to get access to Admin menu. I left it mainly because I'm using it as a path to get back there without restarting whole workspace. I also hope, that people that would like to interfere negatively with my app, will not even think about contacting me. -->
@@ -74,38 +70,39 @@
             </div>
             <div class="col s12 m4">
                 <h6 class="center">Social Media</h6>
-                    <ul class="center margin ">
-                        <li class="social-links"> 
-                            <a href="https://www.facebook.com/stan.kaczorkiewicz" target="_blank" >
+                <ul class="center margin ">
+                    <li class="social-links">
+                        <a href="https://www.facebook.com/stan.kaczorkiewicz" target="_blank">
                             <i class="fab fa-facebook"></i>
                             <span class="sr-only">Facebook</span>
-                            </a> 
-                        </li>
-                        <li class="social-links"> 
-                            <a href="https://www.linkedin.com/in/stan-kaczorkiewicz-94a146195/" target="_blank" >
+                            </a>
+                    </li>
+                    <li class="social-links">
+                        <a href="https://www.linkedin.com/in/stan-kaczorkiewicz-94a146195/" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                             <span class="sr-only">Linkedin</span>
-                            </a> 
-                        </li>
-                        <li class="social-links">
-                            <a href="https://www.instagram.com/navigare_necesse_est_i_huj/" target="_blank" >
+                            </a>
+                    </li>
+                    <li class="social-links">
+                        <a href="https://www.instagram.com/navigare_necesse_est_i_huj/" target="_blank">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                             </a>
-                        </li>
-                    </ul>
+                    </li>
+                </ul>
 
             </div>
         </div>
     </footer>
-<!-- Import JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function() {
-    $('select').material_select();
-    $(".button-collapse").sideNav();
-  });
-  </script>
+    <!-- Import JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('select').material_select();
+        $(".button-collapse").sideNav();
+      });
+    </script>
 </body>
+
 </html>

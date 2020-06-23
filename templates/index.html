@@ -1,27 +1,27 @@
 <!-- The main page on which we start our journey as for now.
-    Later on, before publishing the app to first users, I'm going to disable the "Admin" button,
-    to avoid potential acts of vandalisms etc. -->
-
+   Later on, before publishing the app to first users, I'm going to disable the "Admin" button,
+   to avoid potential acts of vandalisms etc. -->
 {% extends 'base.html' %}
 {% block content %}
-
-    <section class="center">
-        <div class="row padding-5">
-            <div class="col s12 bg-morenew border">
-            <h3>Welcome to our page!</h3>
-            <h4>Here you can learn some every-day Polish, that you can use at work, or while talking to the person you are attracted to.</h4>
-            <h5 class="padding-bottom" >Please choose who you are:</h5>
-            </div>
-            <div class="col s12 m6 bg-drk padding-5 opacity border">
-                <a href="{{url_for('user')}}" id="user" class=" high"><h3>The Student</h3> 
-                <p class="bg-redish"> I would like to learn some Polish </p></a>
-            </div>
-            <div class="col s12 m6 bg-drk padding-5 border">
-                <a href="{{url_for('admin')}}" id="admin" class=" high "><h3>The Admin</h3> 
-                <p class="bg-redish"> I speak Polish and want to help improving your database </p></a>
-            </div>
-        </div>
-    </section> 
-
+<section class="center">
+   <div class="row padding-5">
+      <div class="col s12 bg-morenew border">
+         <h3>Welcome to our page!</h3>
+         <h4>Here you can learn some every-day Polish, that you can use at work, or while talking to the person you are attracted to.</h4>
+         <h5 class="padding-bottom" >Please choose who you are:</h5>
+      </div>
+      <div class="col s12 m6 bg-drk padding-5 opacity border">
+         <a href="{{url_for('user')}}" id="user" class=" high">
+            <h3>The Student</h3>
+            <p class="bg-redish"> I would like to learn some Polish </p>
+         </a>
+      </div>
+      <div class="col s12 m6 bg-drk padding-5 border">
+         <a href="{{url_for('admin')}}" id="admin" class=" high ">
+            <h3>The Admin</h3>
+            <p class="bg-redish"> I speak Polish and want to help improving your database </p>
+         </a>
+      </div>
+   </div>
+</section>
 {% endblock %}
-

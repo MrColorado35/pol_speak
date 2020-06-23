@@ -1,101 +1,91 @@
 <!-- The reason for this page to be separate than 'cat.html' is a full menu on top of the page and ability to edit every word, which 'Student' is not allowed to do. -->
-
 {% extends 'base.html' %}
 {% block content %} 
 <div class="bg-morenew padding-5 margin border">
-
-    <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
-    <h6 class="center">{{ category.description }}: </h6>
+   <h2 class="center uppercase">"{{ category.cat_name }}"</h2>
+   <h6 class="center">{{ category.description }}: </h6>
 </div>
-    {% if category.cat_name == 'work' %}
-        {% for word in words %} 
-
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header center">
-                <p class=" center "><i class=" material-icons">expand_more</i>
-                 {{ word.eng }} 
-                </p>
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ word.pol }} </p>
-                    <p>Pronounce: &emsp; {{ word.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p> 
-                    <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light bg-blue btn">EDIT</a>                
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-
-    {% elif category.cat_name == 'romance' %}
-          {% for romance in romances %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header">
-                <p class=" center "><i class=" material-icons">expand_more</i>
-                {{ romance.eng}}
-                </p>
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ romance.pol }} </p>
-                    <p>Pronounce: &emsp; {{ romance.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ romance.explaination }}</strong></p>     
-                    <a href="{{url_for('edit_word', word_id=romance._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>            
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-     {% elif category.cat_name == 'NSFW' %}
-          {% for nsfw in nsfws %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header">
-                <p class=" center "><i class=" material-icons">expand_more</i>
-                {{ nsfw.eng}}
-                </p>
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ nsfw.pol }} </p>
-                    <p>Pronounce: &emsp; {{ nsfw.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ nsfw.explaination }}</strong></p>
-                    <a href="{{url_for('edit_word', word_id=nsfw._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>                 
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-    {% elif category.cat_name == 'other' %}
-          {% for other in others %} 
-
-        <ul class="collapsible popout" data-collapsible="accordion">
-            
-            <li>
-                <div class="collapsible-header">
-                <p class=" center "><i class=" material-icons">expand_more</i>
-                {{ other.eng}}
-                </p>
-                </div>  
-                <div class="collapsible-body center"><div class="bg-love">
-                    <p>Polish: &emsp; {{ other.pol }} </p>
-                    <p>Pronounce: &emsp; {{ other.read }}</p></div>
-                    <p>Remember: &emsp;<strong>{{ other.explaination }}</strong></p>
-                    <a href="{{url_for('edit_word', word_id=other._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>                
-                </div>        
-            </li>
-        </ul>
-
-        {%endfor%}
-    {% else %}
-        <div class="center">There is no such category yet, please try again</div>
-
-    {% endif %}
-
+{% if category.cat_name == 'work' %}
+{% for word in words %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header center">
+         <p class=" center "><i class=" material-icons">expand_more</i>
+            {{ word.eng }} 
+         </p>
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ word.pol }} </p>
+            <p>Pronounce: &emsp; {{ word.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p>
+         <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light bg-blue btn">EDIT</a>                
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% elif category.cat_name == 'romance' %}
+{% for romance in romances %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header">
+         <p class=" center "><i class=" material-icons">expand_more</i>
+            {{ romance.eng}}
+         </p>
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ romance.pol }} </p>
+            <p>Pronounce: &emsp; {{ romance.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ romance.explaination }}</strong></p>
+         <a href="{{url_for('edit_word', word_id=romance._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>            
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% elif category.cat_name == 'NSFW' %}
+{% for nsfw in nsfws %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header">
+         <p class=" center "><i class=" material-icons">expand_more</i>
+            {{ nsfw.eng}}
+         </p>
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ nsfw.pol }} </p>
+            <p>Pronounce: &emsp; {{ nsfw.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ nsfw.explaination }}</strong></p>
+         <a href="{{url_for('edit_word', word_id=nsfw._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>                 
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% elif category.cat_name == 'other' %}
+{% for other in others %} 
+<ul class="collapsible popout" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header">
+         <p class=" center "><i class=" material-icons">expand_more</i>
+            {{ other.eng}}
+         </p>
+      </div>
+      <div class="collapsible-body center">
+         <div class="bg-love">
+            <p>Polish: &emsp; {{ other.pol }} </p>
+            <p>Pronounce: &emsp; {{ other.read }}</p>
+         </div>
+         <p>Remember: &emsp;<strong>{{ other.explaination }}</strong></p>
+         <a href="{{url_for('edit_word', word_id=other._id)}}" class="waves-effect waves-light center bg-blue btn">EDIT</a>                
+      </div>
+   </li>
+</ul>
+{%endfor%}
+{% else %}
+<div class="center">There is no such category yet, please try again</div>
+{% endif %}
 {% endblock %}

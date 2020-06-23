@@ -6,9 +6,9 @@ Also it's my small step towards the better world, where we as humans don't hate 
 
 From the user perspective, this project is supposed to help in a in-work communication with Poles, or just any interaction with Polish- speaking people. It always helps to get positive reactions from foreigners, 
 if they see you trying to communicate with them in their language.
-Here, hopefully, I can provide a tool, that will allow dear users to do so.
 
 It's worth to mention, that during the process of creation this app, there was a need for very similar one, for the fandom of "The Name of The Wind" by Patrick Rothfuss, one of the greatest books of all time.
+https://ademre.herokuapp.com/
 I decided to use part of the code from this app, to create enviroment for our community to share the ideas for sign language, that will express emotions, while we are covering our faces due to the pandemy.
 I even consiedered to change it to my Milestone Project, but then realised that more people will participate in it and I could not say that it's my own project on the end, even though the code will be mine.
 
@@ -28,6 +28,7 @@ The 'Admin', on the other hand, has access to full  spectrum of CRUD operations.
 There are doors for the user to come back from 'Student' to 'Admin' page, through the 'Contact' page, that is linked in the footer.
 Of course if potentiall users will recive link to the full app, they can just open it again or hit 'back' button enough times.
 I just believe, that someone who would like to only damage my database will be too lazy to do so.
+
 For the same reason there are two, almost identical pages called 'cat' and 'cat_admin'.
 'cat_admin' allows user to edit any word and has an admin menu.
 
@@ -39,7 +40,7 @@ Due to the way how my database is made, I do not allow users to create new categ
 Throughout the proccess of creation, I was constantly testing every new functionality of my app.
 As I learned during my previous projects, I was testing one change at a time.
 
-The biggest issue, that took me three days of thinking and researching to solve, was how to connect all the words of one category and present them to the user in a right place.
+The biggest issue was- how to connect all the words of one category and present them to the user in a right place.
 On the beginning I was trying to use various "if" statements (as in commit at 29th May), but none of the versions I tried works.
 Googling it brought me many different ways, that wasn't suitable for my needs.
 Finally I managed to find my own way and that's the one I've got a pleasure to present here in a commit at 31st of May.

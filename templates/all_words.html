@@ -1,44 +1,39 @@
 <!-- List of all words for Admin to see -->
-
 {% extends 'base.html' %}
 {% block content %} 
-
 <div class="">
    <div class="col sm12 bg-morenew margin border center ">
-        <h4 class="">"With the great power comes great responsibility"</h4>
-        <h5 class="">In this section you can see, edit or delete any record in our database.</h5>
-        <p>Please use that great power to make the world a bit better place, instead of destroying hard work of all our emploees for countless hours, while they created it.</p>
-        <h6 class="padding-bottom ">Well, I don't employ anyone yet and the database is quite small, but one day it will be huge and important <br> and then we are going to need the text above.  </h6>
-        <!-- <i class="material-icons">insert_emoticon</i> -->
-    </div>
+      <h4 class="">"With the great power comes great responsibility"</h4>
+      <h5 class="">In this section you can see, edit or delete any record in our database.</h5>
+      <p>Please use that great power to make the world a bit better place, instead of destroying hard work of all our emploees for countless hours, while they created it.</p>
+      <h6 class="padding-bottom ">Well, I don't employ anyone yet and the database is quite small, but one day it will be huge and important <br> and then we are going to need the text above.  </h6>
+      <!-- <i class="material-icons">insert_emoticon</i> -->
+   </div>
 </div>
 <div class="row">
-    <ul class="collapsible popout " data-collapsible="accordion">
-    {% for word in words %} 
-    <!-- <div class="right margin-right no-bg tall">
-    </div> -->
-    <li>      
-      <div class="collapsible-header ">
+   <ul class="collapsible popout " data-collapsible="accordion">
+      {% for word in words %} 
+      <!-- <div class="right margin-right no-bg tall">
+         </div> -->
+      <li>
+         <div class="collapsible-header ">
             <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
             <p class=" center col s6"><i class="left material-icons">expand_more</i>
-            <strong> {{ word.eng }} </strong>
+               <strong> {{ word.eng }} </strong>
             </p>
             <a href="{{url_for('delete_word', word_id=word._id)}}" class="waves-effect right col s3 margin-right waves-light btn bg-redish">DELETE</a>
-
-      <!-- <a class="right margin-right bg-blue tall waves-effect waves-light btn center top-one">DELETE</a>          -->
-      </div>
-      <div class="collapsible-body center"><div class="bg-love">
-        <p>Polish: &emsp; {{ word.pol }} </p>
-        <p>Pronounce: &emsp; {{ word.read }}</p></div>
-        <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p> 
-        <p>Category: &emsp;{{ word.cat_name }} </p>
-      </div>
-    </li>
-     {% endfor %}
-  </ul>  
-  </div>
-
-        
-
-   
+            <!-- <a class="right margin-right bg-blue tall waves-effect waves-light btn center top-one">DELETE</a>          -->
+         </div>
+         <div class="collapsible-body center">
+            <div class="bg-love">
+               <p>Polish: &emsp; {{ word.pol }} </p>
+               <p>Pronounce: &emsp; {{ word.read }}</p>
+            </div>
+            <p>Remember: &emsp;<strong>{{ word.explaination }}</strong></p>
+            <p>Category: &emsp;{{ word.cat_name }} </p>
+         </div>
+      </li>
+      {% endfor %}
+   </ul>
+</div>
 {% endblock %}

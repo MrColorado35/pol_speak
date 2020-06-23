@@ -1,25 +1,20 @@
 <!-- Admin has an access to full menu on 'base.html'. Also on the next step Admin has ability to edit every word. -->
-
 {% extends 'base.html' %}
 {% block content %} 
-   <div class=" bg-morenew padding-5 margin border">
-
-    <h3 class="center">Here is a list of categories of words,</h3>
-    <h4 class="center">Choose one to get the list of words useful in chosen enviroment.</h4>
-   </div>
-    <ul class="collapsible popout" data-collapsible="accordion">
-    {% for cat in categories %}
-    <li>
-        <a href="{{ url_for('cat_admin', cat_id=cat._id) }}">
-      <div class="collapsible-header uppercase"><i class="material-icons">expand_more</i>
-       {{ cat.cat_name}}
-       </div>  
-       </a>   
-      <div class="collapsible-body"><span>{{ categories.decription }}</span></div>    
-    </li>
-    {% endfor %}
-  </ul>
-       
-
-   
+<div class=" bg-morenew padding-5 margin border">
+   <h3 class="center">Here is a list of categories of words,</h3>
+   <h4 class="center">Choose one to get the list of words useful in chosen enviroment.</h4>
+</div>
+<ul class="collapsible popout" data-collapsible="accordion">
+   {% for cat in categories %}
+   <li>
+      <a href="{{ url_for('cat_admin', cat_id=cat._id) }}">
+         <div class="collapsible-header uppercase"><i class="material-icons">expand_more</i>
+            {{ cat.cat_name}}
+         </div>
+      </a>
+      <div class="collapsible-body"><span>{{ categories.decription }}</span></div>
+   </li>
+   {% endfor %}
+</ul>
 {% endblock %}

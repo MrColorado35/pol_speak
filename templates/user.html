@@ -1,27 +1,23 @@
 <!-- Users will only have an ability to read the records from our database, without a structure allowing users to add,  edit or delete them -->
-
 {% extends 'base_student.html' %}
 {% block content %} 
-   <div class=" bg-morenew padding-5 margin border">
-
-    <h3 class="center">Here is a list of categories of words,</h3>
-    <h4 class="center">Choose one to get the list of words useful in chosen enviroment.</h4>
-   </div>
-    <ul class="collapsible popout" data-collapsible="accordion">
-    {% for cat in categories %}
-    <li>
-        <a href="{{ url_for('cat', cat_id=cat._id) }}">
-      <div class="collapsible-header uppercase"><i class="material-icons">expand_more</i>
-      <!-- <a href="{{ url_for('cat', cat_id=cat._id) }}"> -->
-       {{ cat.cat_name}}
-       <!-- </a> -->
-       </div>  
-       </a>   
-      <div class="collapsible-body"><span>{{ categories.decription }}</span></div>    
-    </li>
-    {% endfor %}
-  </ul>
-       
-
-   
+<div class=" bg-morenew padding-5 margin border">
+   <h3 class="center">Here is a list of categories of words,</h3>
+   <h4 class="center">Choose one to get the list of words useful in chosen enviroment.</h4>
+</div>
+<ul class="collapsible popout" data-collapsible="accordion">
+   {% for cat in categories %}
+   <li>
+      <a href="{{ url_for('cat', cat_id=cat._id) }}">
+         <div class="collapsible-header uppercase">
+            <i class="material-icons">expand_more</i>
+            <!-- <a href="{{ url_for('cat', cat_id=cat._id) }}"> -->
+            {{ cat.cat_name}}
+            <!-- </a> -->
+         </div>
+      </a>
+      <div class="collapsible-body"><span>{{ categories.decription }}</span></div>
+   </li>
+   {% endfor %}
+</ul>
 {% endblock %}

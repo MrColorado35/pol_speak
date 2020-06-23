@@ -136,7 +136,7 @@ def cat_admin(cat_id):
     romances = mongo.db.words.find({'cat_name': "romance"})
     nsfws = mongo.db.words.find({'cat_name': "NSFW"})
     others = mongo.db.words.find({'cat_name': "other"})
-    
+
     return render_template('cat_admin.html', category=category,
         words=words, romances=romances, nsfws=nsfws, others=others,)
 
