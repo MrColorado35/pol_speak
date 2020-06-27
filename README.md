@@ -70,6 +70,14 @@ I'm going to change it just after I'll work it out.
 Another interesting test was to send it to few of my English friends and ask them for their opinion.
 Only three of them really had a look into the app, what makes me think that it could be a great failure, as English people generally don't like to learn languages.
 
+## Edit at 27/06/2020 
+
+Today, after sending a link to one friend of mine, I found out that someone who had an access to my app has erased whole database. It means, that someone spent 20 minutes oh their Saturday, just deleting all 50ish records one after another.
+Yesterday, when I was editing the README, everything was alright, so it must happened today.
+I've sent it to around 20 people and then requested code preview on Slack, Code Institute Team.
+Finally I added it to my LinkedIn profile as my newest project, and this is my bet where does that bastard coming from.
+As I've got to recreate whole database now, I commented part of the code, responsible for removing records from the database. Please uncomment it in order to test functionality, this whole situation is a proof that it worked too well.
+I just simply cannot believe, that someone was determined enough to just clear all data for no reason.
 
 
 # Deployment
@@ -82,6 +90,7 @@ Then I needed to log in to Heroku through GitPod and push it there in the same w
 Of course after any update to the libraries, I need to update requirements.txt file, using my terminal.
 The final steps to make it works was to declare Config Vars, such as IP and PORT.
 With all this in place, I was able to use the app to create new records, what has significantly reduced my usage of GitPod, so my free 100 hours should be enough for this month as well.
+
 
 # Technologies used:
 
