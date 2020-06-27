@@ -1,5 +1,5 @@
 body {
-	background-color: #F2F7F2;
+	background-color: #e6e6e6;
 	color: #0b0b0b;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .bg-drk {
-	background-color: #4a516d;
+	background-color: #0d2330;
 	color: aliceblue;
 }
 
@@ -29,17 +29,17 @@ body {
 }
 
 .bg-love {
-	background-color: #873156;
+	background-color: #123040;
 	color: aliceblue;
 }
 
 
-/* .bg-new {
-    background-color: #8BE2E5;
-} */
+.bg-new {
+    background-color: #873156;
+}
 
 .bg-morenew {
-	background-color: #DFA5BE;
+	background-color: #3f9aca;
 }
 
 .opacity {

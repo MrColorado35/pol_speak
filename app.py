@@ -24,7 +24,6 @@ def index():
 # If we choose that we want to learn Polish, here's where we go
 @app.route('/user')
 def user():
-    # description = mongo.db.categories.find_one({'_id': ObjectId(cat_id)})
     return render_template("user.html", categories=cat_list)
 
 # Allows us to see all categories and then all the words in specific order.
@@ -72,7 +71,9 @@ def edit_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})
     return render_template("edit_word.html", word=the_word, categories=cat_list,)
 
-
+# The code underneath is commented in order to prevent users from editing database records,
+# as a result of vandalism on my app made 27/06 by anonimus user.
+# Please uncomment it to use it's functionality
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
     # words = mongo.db.words
@@ -94,7 +95,9 @@ def update_word(word_id):
 # These are allowing admin to permanently delete any word from the database. I'm still unsure if I should leave it while
 # letting people to use my app freely.
 
-
+# The code underneath is commented in order to prevent users from editing database records,
+# as a result of vandalism on my app made 27/06 by anonimus user.
+# Please uncomment it to use it's functionality
 @app.route('/delete_word/<word_id>')
 def delete_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})  
@@ -112,9 +115,8 @@ def delete_word(word_id):
 def contact():
     return render_template("contact.html")
 
-# Thats my newest idea, to allow an admin to see words divided by categories, not only as a pile of all words from 
-# the websie together, kept without any order
-
+# Thats my newest idea, to allow an admin to see words divided by categories, not only as a pile of all words on 
+# the website together, kept without any order. 
 
 @app.route('/admin_cat')
 def admin_cat():
