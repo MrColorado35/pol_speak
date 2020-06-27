@@ -75,18 +75,18 @@ def edit_word(word_id):
 
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
-    words = mongo.db.words
-    try:
-        words.update({'_id': ObjectId(word_id)},
-        {
-            'eng': request.form.get('eng'),
-            'pol': request.form.get('pol'),
-            'read': request.form.get('read'),
-            'explaination': request.form.get('explaination'),
-            'cat_name': request.form.get('cat_name')        
-        })
-    except Exception:
-        flash("There was an error with your querry, please try again")
+    # words = mongo.db.words
+    # try:
+    #     words.update({'_id': ObjectId(word_id)},
+    #     {
+    #         'eng': request.form.get('eng'),
+    #         'pol': request.form.get('pol'),
+    #         'read': request.form.get('read'),
+    #         'explaination': request.form.get('explaination'),
+    #         'cat_name': request.form.get('cat_name')        
+    #     })
+    # except Exception:
+    #     flash("There was an error with your querry, please try again")
        
 
     return redirect(url_for('all_words'))

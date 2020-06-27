@@ -76,8 +76,12 @@ Today, after sending a link to one friend of mine, I found out that someone who 
 Yesterday, when I was editing the README, everything was alright, so it must happened today.
 I've sent it to around 20 people and then requested code preview on Slack, Code Institute Team.
 Finally I added it to my LinkedIn profile as my newest project, and this is my bet where does that bastard coming from.
-As I've got to recreate whole database now, I commented part of the code, responsible for removing records from the database. Please uncomment it in order to test functionality, this whole situation is a proof that it worked too well.
+As I've got to recreate whole database now, I commented part of the code, responsible for removing records from the database. Now if user is trying to delete them, it will just throw an error.
+Please uncomment it in order to test functionality, this whole situation is a proof that it worked very well.
 I just simply cannot believe, that someone was determined enough to just clear all data for no reason.
+
+I also decided to comment the code in app.py, that is responsible for editing the records, as it could be another way of damaging my database. Now it shows the page for editing, but after submitting, does not apply any changes.
+Once again, please uncomment that in order to use this functionality.
 
 
 # Deployment
