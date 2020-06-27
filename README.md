@@ -22,6 +22,8 @@ I identified a user as:
 - A person who is attracted to a Polish-speaking man or woman.
 - Firstly I thought about potential travellers to Poland, but then I realised that there's huge amount of websites that cover this subject, while no-one focused on Polish co-workers.
 
+My first idea of the website can be found in assets/images/first_idea.jpg and assets/images/plan_how.jpg among with the first version of database underneath.
+
 # UI
 Users that will receive link to the full app, will start on index.html page, that gives them a choice of what actions they want to perform. I decided to create two 'base' files- called base and base_student.
 The reason for that is to limit user's ability to edit records inside the database.
