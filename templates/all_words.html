@@ -7,14 +7,11 @@
       <h5 class="">In this section you can see, edit or delete any record in our database.</h5>
       <p>Please use that great power to make the world a bit better place, instead of destroying hard work of all our emploees for countless hours, while they created it.</p>
       <h6 class="padding-bottom ">Well, I don't employ anyone yet and the database is quite small, but one day it will be huge and important <br> and then we are going to need the text above.  </h6>
-      <!-- <i class="material-icons">insert_emoticon</i> -->
    </div>
 </div>
 <div class="row">
    <ul class="collapsible popout " data-collapsible="accordion">
-      {% for word in words %} 
-      <!-- <div class="right margin-right no-bg tall">
-         </div> -->
+      {% for word in words %}     
       <li>
          <div class="collapsible-header ">
             <a href="{{url_for('edit_word', word_id=word._id)}}" class="waves-effect waves-light col s3 bg-blue btn">EDIT</a>
@@ -22,7 +19,6 @@
                <strong> {{ word.eng }} </strong>
             </p>
             <a href="{{url_for('delete_word', word_id=word._id)}}" class="waves-effect right col s3 margin-right waves-light btn bg-redish">DELETE</a>
-            <!-- <a class="right margin-right bg-blue tall waves-effect waves-light btn center top-one">DELETE</a>          -->
          </div>
          <div class="collapsible-body center">
             <div class="bg-love">

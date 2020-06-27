@@ -11,9 +11,7 @@
       <a href="{{ url_for('cat', cat_id=cat._id) }}">
          <div class="collapsible-header uppercase">
             <i class="material-icons">expand_more</i>
-            <!-- <a href="{{ url_for('cat', cat_id=cat._id) }}"> -->
             {{ cat.cat_name}}
-            <!-- </a> -->
          </div>
       </a>
       <div class="collapsible-body"><span>{{ categories.decription }}</span></div>

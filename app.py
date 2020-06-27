@@ -95,19 +95,19 @@ def update_word(word_id):
 # These are allowing admin to permanently delete any word from the database. I'm still unsure if I should leave it while
 # letting people to use my app freely.
 
-# The code underneath is commented in order to prevent users from editing database records,
-# as a result of vandalism on my app made 27/06 by anonimus user.
-# Please uncomment it to use it's functionality
+
 @app.route('/delete_word/<word_id>')
 def delete_word(word_id):
     the_word = mongo.db.words.find_one({'_id': ObjectId(word_id)})  
     return render_template("delete_word.html", word=the_word)
 
-
-# @app.route('/remove_word/<word_id>', methods=['POST', 'GET'])
-# def remove_word(word_id):
-#     mongo.db.words.remove({'_id': ObjectId(word_id)})
-#     return redirect(url_for('all_words'))
+# The code underneath is commented in order to prevent users from editing database records,
+# as a result of vandalism on my app made 27/06 by anonimus user.
+# Please uncomment it to use it's functionality
+@app.route('/remove_word/<word_id>', methods=['POST', 'GET'])
+def remove_word(word_id):
+    # mongo.db.words.remove({'_id': ObjectId(word_id)})
+    return redirect(url_for('all_words'))
 
 # This one allows us to go to contact page. This is also a trick to help to come out from the "user's trap" that I 
 # created earlier and that will not allow users to go back to admin page through the menu
