@@ -101,10 +101,10 @@ def delete_word(word_id):
     return render_template("delete_word.html", word=the_word)
 
 
-@app.route('/remove_word/<word_id>', methods=['POST', 'GET'])
-def remove_word(word_id):
-    mongo.db.words.remove({'_id': ObjectId(word_id)})
-    return redirect(url_for('all_words'))
+# @app.route('/remove_word/<word_id>', methods=['POST', 'GET'])
+# def remove_word(word_id):
+#     mongo.db.words.remove({'_id': ObjectId(word_id)})
+#     return redirect(url_for('all_words'))
 
 # This one allows us to go to contact page. This is also a trick to help to come out from the "user's trap" that I 
 # created earlier and that will not allow users to go back to admin page through the menu
