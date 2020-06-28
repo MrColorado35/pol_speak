@@ -2,8 +2,6 @@
 // While making it, I was inspired by course materials, 
 // specifficaly last part of "Interactive Frontend development" section.
 
-console.log("I'm in")
-
 function sendMail(contactForm) {
 	emailjs.send("gmail", "speak", {
 			"from_name": contactForm.name.value,
