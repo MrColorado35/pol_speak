@@ -1,9 +1,9 @@
 import os
-if os.path.exists("env.py"):
-  import env 
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+if os.path.exists("env.py"):
+  import env 
 
 
 # The first part of set-ups is inspired by the course materials, mini project "Task Manager":
