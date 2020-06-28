@@ -117,7 +117,7 @@ def contact():
     return render_template("contact.html")
 
 # Thats my newest idea, to allow an admin to see words divided by categories, not only as a pile of all words on 
-# the website together, kept without any order. 
+# the website together, kept without any order.
 
 @app.route('/admin_cat')
 def admin_cat():
@@ -139,4 +139,4 @@ def cat_admin(cat_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
+        debug=False)
