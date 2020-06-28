@@ -53,14 +53,14 @@ As one of my main concerns was security of the app and protection against the ac
 
 Another, very important feature, is the audio file, with recording of right pronaunciation of every word in the database.
 As my free MongoDB account has limited memory capacity, I decided to ignore that until I'll find other ways to do so.
-Tests with my friends has shown, that my tips in 'pronounce' section do the job.
+Tests with my friends have shown, that my tips in 'pronounce' section do the job.
 
 
 
 # Testing
 
 Throughout the proccess of creation, I was constantly testing every new functionality of my app.
-As I learned during my previous projects, I was testing one change at a time.
+I learned during my previous projects and I was testing one change at a time.
 
 The biggest issue was- how to connect all the words in one category and present them to the user in a right place.
 In the beginning I was trying to use various "if" statements (as in commit at 29th May), but none of the versions I tried worked.
@@ -74,10 +74,10 @@ Only three of them really had a look into the app, what makes me think that it c
 
 ## Edit at 27/06/2020 
 
-Today, after sending a link to one friend of mine, I found out that someone who had an access to my app has erased whole database. It means, that someone spent 20 minutes oh their Saturday, just deleting all 50ish records one after another.
+Today, after sending a link to a friend of mine, I found out that someone who had an access to my app has erased a whole database. It means, that someone spent 20 minutes oh their Saturday, just deleting all 50ish records one after another.
 I've sent it to around 20 people and then requested code preview on Slack, Code Institute Team.
-Finally I added it to my LinkedIn profile as my newest project, and this is my bet where does the intruder coming from.
-As I've got to recreate whole database now, I commented parts of the code in app.py, that is responsible for removing and editing records in the database. Now if user is trying to delete them, it will do nothing, just come back to the list of words again.
+Finally I added it to my LinkedIn profile as my newest project, and this is my bet on where the intruder got the access from.
+As I've got to recreate the whole database now, I commented parts of the code in app.py, that is responsible for removing and editing records in the database. Now, if user is trying to delete them, it will do nothing, just come back to the list of words again.
 Please uncomment it in order to test functionality, this whole situation is a proof that it worked very well.
 I just simply cannot believe, that someone was determined enough to just clear all data for no reason.
 
@@ -98,9 +98,9 @@ With all this in place, I was able to use the app to create new records, what ha
 
 - HTML5 to structure the page;
 - CSS3 for adding the style to it;
-- Materialize for navigation and layout and to make every page responsive. It was my first project where I used something else than Bootstrap, which in my opinion was good lesson and gave me valuable experience, that will benefit in my professional career.
+- Materialize for navigation and layout and to make every page responsive. It was my first project where I used something else than Bootstrap, which in my opinion was a good lesson and gave me valuable experience, that will benefit me in my professional career.
 - JavaScript to add functionality to the contact form from EmailJS;
-- Python3 and Jinja2 for functionality of whole page and reduction of unnecessery, repeatable code;
+- Python3 and Jinja2 for functionality of the whole page and reduction of unnecessery, repeatable code;
 - GitPod provides me an enviroment where I've been working, also providing version control;
 - FontAwesome to provide icons for footer's social links, where Materialize has failed;
 - Google Fonts for that fancy font I'm using in the Nav menu;
@@ -109,17 +109,17 @@ With all this in place, I was able to use the app to create new records, what ha
 - Heroku allowed me to deploy my page for free;
 - GitHub to store my work online;
 - MongoDB to store my database there
-- Developer Tools (build-in feature of Google Chrome), that allowed me to instantly apply all the changes I intened to make and to see their effects (or lack of effect in many cases) immediately;
+- Developer Tools (build-in feature of Google Chrome), that allowed me to instantly apply all the changes I intened to make and to see their effects (or lack of effects in many cases) immediately;
 
 # Credits
 
 While creating this app, I used some external sources:
 - coolors.co to choose the colors palette
-- materialize.com to use some CSS and JavaScript. It was my first project with     something else than bootstrap. Also the accordion offered by bootstrap is not as nice in my opinion, and I was unable to find side-nav (that is a feature that I really like) in there. 
+- materialize.com to use some CSS and JavaScript. It was my first project with something else than bootstrap. Also the accordion offered by bootstrap is not as nice in my opinion, and I was unable to find side-nav (that is a feature that I really like) in there. 
 - I was inspired by the Code Institute course materials, espacially the last mini-project with databases;
-- While creating the README file, I was inspired by my own README from previous project. 
+- While creating the README file, I was inspired by my own README from a previous project. 
 
 # Acknowledgement
 
-I would like to say thank you to my fiancee for support and her valid opinions regarding to this project. I'm also gratefull for all good advices from my mentor, Reuben Ferrante, including such small things like good practices about naming global variables with capital letters.
-I would also like to mention Tony O'Brien, Nick Mortimmer and Andrea Mason that were testing this app and left me some valuable feedback. 
+I would like to say thank you to my fiancee for support and her valid opinions regarding to this project. I'm also gratefull for all the good advice from my mentor, Reuben Ferrante, including such small things like good practices about naming global variables with capital letters.
+I would also like to mention Tony O'Brien, Nick Mortimer and Andrea Mason who were testing this app and left me some valuable feedback. 
