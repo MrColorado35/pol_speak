@@ -72,6 +72,9 @@ I'm going to change it just after I'll work it out.
 Another interesting test was to send it to few of my English friends and ask them for their opinion.
 Only three of them really had a look into the app, what makes me think that it could be a great failure, as English people generally don't like to learn languages.
 
+The last tests after security breach at 27 of June, tought me how to use .gitignore file, and that I've got to set up MONGO_URI as a config variable in Heroku itself, if I don't want it to be visible on my GitHub repository. Otherwise the app doesn't work, which was the issue I fixed with a little help of Code Institute tutor, which I am really grateful for.
+
+
 ## Edit at 27/06/2020 
 
 Today, after sending a link to a friend of mine, I found out that someone who had an access to my app has erased a whole database. It means, that someone spent 20 minutes oh their Saturday, just deleting all 50ish records one after another.
